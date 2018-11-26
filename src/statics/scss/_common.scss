@@ -1,0 +1,71 @@
+* {
+    //outline: 1px solid rgb(46, 141, 9);
+}
+
+ol,
+ul,
+figure {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a.light-link {
+    color: $gray;
+}
+
+button {
+    @extend
+        .btn,
+        .btn-primary,
+        .text-uppercase;
+}
+
+input,
+select,
+textarea {
+    @extend .form-control;
+
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+
+    &.light-input {
+        @extend .text-white;
+    }
+}
+
+.inner-spacing {
+    padding-top: ($spacer * 3);
+    padding-bottom: ($spacer * 3);
+    
+    @include media-breakpoint-up(md) {
+        padding-top: ($spacer * 6);
+        padding-bottom: ($spacer * 6);
+    }
+}
+
+.outer-spacing {
+    margin-top: ($spacer * 3);
+    margin-bottom: ($spacer * 3);
+    
+    @include media-breakpoint-up(md) {
+        margin-top: ($spacer * 6);
+        margin-bottom: ($spacer * 6);
+    }
+}
+
+.section-title {
+    @extend .text-uppercase, .text-center;
+
+    @include font(18px, normal);
+
+    letter-spacing: 2px;
+    margin-bottom: $spacer * 2;
+    
+    @include media-breakpoint-up(md) {
+        @include font(20px);
+
+        margin-bottom: $spacer * 3;
+    }
+}

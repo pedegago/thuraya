@@ -1,0 +1,63 @@
+.products {
+    @extend
+        .container,
+        .outer-spacing;
+
+    h2 {
+        @extend .section-title;
+    }
+
+    article {
+        @include flex();
+
+        margin: -$spacer;
+    }
+
+    figure {
+        @include flex(column, space-between);
+        @include size(auto, 100%);
+
+        margin: $spacer;
+        padding: $spacer;
+        width: calc(100% - ($spacer * 2));
+    }
+
+    img {
+        @include size(auto, 100%);
+        
+        background-color: $primary;
+        margin-bottom: $spacer * 2;
+    }
+
+    figcaption {
+        @extend .text-center;
+
+        color: $gray;
+        width: 100%;
+    }
+
+    .product-name {
+        @extend
+            .text-center,
+            .text-uppercase;
+
+        @include font(14px);
+
+        display: block;
+        letter-spacing: 1px;
+        margin-bottom: $spacer / 2;
+    }
+
+    @include media-breakpoint-up(sm) {
+        figure {
+            margin: $spacer;
+            padding: $spacer;
+            
+            @include size(auto, 280px);
+        }
+
+        img {
+            @include size(250px, 100%);
+        }
+    }
+}

@@ -1,0 +1,159 @@
+footer {
+    background-color: $secondary;
+    color: $white;
+
+    .options,
+    p {
+        padding-top: $spacer * 2;
+        padding-bottom: $spacer * 2;
+    }
+
+    .newsletter {
+        @extend .text-center, .border-bottom;
+
+        @include font(15px);
+
+        line-height: 19px;
+        padding-top: $spacer * 3;
+        padding-bottom: $spacer * 3;
+
+        > div {
+            @extend .container;
+        }
+    }
+
+    .subscribe-input {
+        @extend .mx-auto;
+
+        @include flex($wrap: nowrap);
+
+        margin-top: ($spacer * 3);
+    }
+
+    input {
+        @extend .light-input;
+    }
+
+    .options {
+        @extend .container;
+    }
+
+    .navigation {
+        @extend .text-uppercase, .text-center;
+
+        letter-spacing: 1px;
+
+        li {
+            @include font(12px);
+
+            &:not(:last-child) a {
+                @extend .border-bottom;
+            }
+        }
+
+        a {
+            display: block;
+            padding-bottom: $spacer / 1.5;
+            padding-top: $spacer / 1.5;
+        }
+    }
+
+    .testimonial {
+        margin: ($spacer * 2) 0;
+    }
+
+    blockquote {
+        @extend .text-center;
+
+        @include font(14px);
+
+        line-height: 16px;
+        margin-bottom: 0;
+    }
+
+    .socials {
+        ul {
+            @include flex();
+        }
+
+        li:not(:last-child) {
+            margin-right: $spacer;
+        }
+
+        a:hover {
+            opacity: 0.3;
+        }
+
+        .facebook-icon {
+            @include icon(27px, $x: -607px, $y: 4px, $size: 1053px);
+
+            display: block;
+        }
+
+        .twitter-icon {
+            @include icon(27px, $x: -546px, $y: 4px, $size: 1053px);
+
+            display: block;
+        }
+
+        .instagram-icon {
+            @include icon(27px, $x: -578px, $y: 4px, $size: 1053px);
+
+            display: block;
+        }
+    }
+
+    h2 {
+        @extend .text-uppercase, .text-center;
+
+        @include font(17px, normal);
+
+        letter-spacing: 2px;
+        margin-bottom: $spacer * 1.5;
+    }
+
+    a {
+        @extend .light-link;
+    }
+
+    p {
+        @extend .text-center;
+
+        @include font(10px);
+
+        background-color: $dark;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .subscribe-input {
+            max-width: 320px;
+        }
+
+        .options {
+            @include flex($horizontal: space-between, $vertical: flex-start);
+        }
+
+        .navigation,
+        .testimonial,
+        .socials {
+            width: calc(33.3333% - 15px);
+        }
+
+        .testimonial {
+            margin: 0;
+        }
+
+        .navigation {
+            li {
+                &:not(:last-child) a {
+                    border: 0!important;
+                }
+            }
+            a {
+                border: 0;
+                padding-bottom: $spacer / 4;
+                padding-top: $spacer / 4;
+            }
+        }
+    }
+}

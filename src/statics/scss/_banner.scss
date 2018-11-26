@@ -1,0 +1,11 @@
+.banner {
+    @extend .inner-spacing;
+
+    @include size(583px, 100%);
+
+    background-image: url($bg-banner);
+    background-color: $primary;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

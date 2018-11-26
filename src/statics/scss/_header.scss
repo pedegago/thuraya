@@ -1,0 +1,118 @@
+header {
+    .logo a {
+        @include icon(49px, 127px, $y: -96px, $size: 653px);
+
+        display: block;
+        margin: ($spacer * 2) auto;
+    }
+
+    .options {
+        @extend .d-lg-none;
+
+        background-color: $light;
+        padding-bottom: $spacer;
+        padding-top: $spacer;
+
+        div {
+            @extend
+                .container,
+                .d-flex,
+                .justify-content-between;
+        }
+    }
+
+    button {
+        @extend .border-0;
+
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        &.hamburger-btn {
+            @include icon(36px, $x: -423px, $y: 9px, $size: 1000px);
+            
+            &.expanded {
+                @include icon(36px, $x: -485px, $y: 9px, $size: 1000px);
+            }
+        }
+
+        &.cart-btn {
+            @include icon(36px, $x: -454px, $y: 9px, $size: 1000px);
+        }
+    }
+
+    nav {
+        @extend .text-uppercase;
+
+        @include font(12px);
+
+        background-color: $secondary;
+        height: 0;
+        letter-spacing: 1px;
+        overflow: hidden;
+        transition: height .45s ease;
+
+        &.expanded {
+            height: 293px;
+        }
+    }
+
+    ul {
+        @extend .container;
+    }
+
+    li {
+        &:not(:last-child) a {
+            @extend .border-bottom;
+        }
+
+        a {
+            @extend .light-link;
+        
+            display: block;
+            padding: $spacer ($spacer / 2.5);
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .logo a {
+            @include icon(55px, 147px, $y: -111px, $size: 753px);
+
+            display: block;
+            margin-bottom: $spacer;
+        }
+
+        nav {
+            @include font(14px);
+            background-color: transparent;
+            height: auto!important;
+            letter-spacing: 2px;
+            margin-bottom: $spacer;
+        }
+        
+        ul {
+            @include flex();
+        }
+        
+        li {
+            &:not(:last-child) {
+                &::after {
+                    content: '|';
+                    color: $light;
+                    margin: 0 ($spacer / 2.5);
+                }
+
+                a {
+                    border-bottom: 0!important;
+                }
+            }
+            
+            a {
+                color: $secondary;
+                display: inline-block;
+            }
+        }
+    }
+}
